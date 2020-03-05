@@ -11,6 +11,15 @@
         <title>Web Pão</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+          <%@include file="menu.jsp" %> 
+        
+        <h1>Nome do Produto.</h1>
+        
+        <%
+            String idProduto = request.getParameter("cod_cat");
+        %>
+        
+        <h1>Meu produto tem o cod<%=idProduto%></h1>
+        
     </body>
 </html>

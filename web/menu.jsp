@@ -13,8 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Web Pão</title>
     </head>
-    <body>
-       
+    <body>   
         <a href="index.jsp">Inicio</a>
         <%
             CategoriaDao cDao = new CategoriaDao();
@@ -25,6 +24,7 @@
                      <a href="produtos.jsp?cod_cat=<%=elem.getIdCategoria()%>"><%=elem.getDescricao()%></a>
                      <%
             }   
-        %>            
+        %>
+         <a href="#">Sair</a>
     </body>
 </html>

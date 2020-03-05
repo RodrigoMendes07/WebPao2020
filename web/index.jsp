@@ -9,10 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <titl>Web Pão.</title>
+    <title>Web Pão.</title>
     </head>
     <body>
-        Olá, <%= request.getParameter("name") %>
-        <h1>Hello World!</h1>
+        <%@include file="menu.jsp" %>  
     </body>
 </html>
