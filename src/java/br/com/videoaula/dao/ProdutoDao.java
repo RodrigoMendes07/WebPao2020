@@ -5,37 +5,50 @@
  */
 package br.com.videoaula.dao;
 
+import br.com.videoaula.bean.CategoriaBean;
+import br.com.videoaula.bean.ProdutoBean;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Ti
  */
 public class ProdutoDao extends Conexao {
     
-    public List <CategoriaBean> listaProduto(String idProduto) {
+    public List <ProdutoBean> listaProduto(int idProduto) {
          
         Connection conn = this.getConnection();
         
-        List <CategoriaBean> lista = new ArrayList();
+        List <ProdutoBean> lista = new ArrayList();
 
-        String sql = "select * from tbl_categoria order by descricao ";
+        String sql = "select * from tbl_produto where id_categoria = ? ";
 
         PreparedStatement ps;
 
         try {
 
             ps = conn.prepareStatement(sql);
+            ps.setInt(1,idProduto);
             
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
+                            
+                ProdutoBean pBean = new ProdutoBean ();
+                CategoriaBean cBean = new CategoriaBean();
                 
-                CategoriaBean ctBean = new CategoriaBean ();
-                           
-                ctBean.setIdCategoria(rs.getInt("id_categoria"));
-                ctBean.setDescricao(rs.getString("descricao"));
-                
-                lista.add(ctBean);
-
+                pBean.setIdProduto(rs.getInt("id_categoria"));
+                pBean.setDescricao(rs.getString("descricao"));
+                pBean.setValor(rs.getDouble("valor"));
+                pBean.setImagem(rs.getString("imagem"));
+                cBean.setIdCategoria(rs.getInt("id_produto"));
+                pBean.setCatBean(cBean);
+                lista.add(pBean);
+      
             }
 
             rs.close();
