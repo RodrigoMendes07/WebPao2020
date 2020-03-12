@@ -19,7 +19,7 @@
         <h1>Nome do Produto.</h1>
         <div class="container">
             <div class="row">
-
+                
                 <%                        int idCategoria = Integer.parseInt(request.getParameter("cod_cat"));
                     ProdutoDao categorias = new ProdutoDao();
                     for (ProdutoBean pBean : categorias.listaProduto(idCategoria)) {

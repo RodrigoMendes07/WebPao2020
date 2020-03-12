@@ -7,6 +7,7 @@
 <%@page import="br.com.videoaula.bean.CategoriaBean"%>
 <%@page import="br.com.videoaula.dao.CategoriaDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="topo.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>

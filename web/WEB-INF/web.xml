@@ -4,9 +4,17 @@
         <servlet-name>Controle</servlet-name>
         <servlet-class>br.com.videoaula.controle.Controle</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginControle</servlet-name>
+        <servlet-class>br.com.videoaula.controle.LoginControle</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controle</servlet-name>
         <url-pattern>/Controle</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginControle</servlet-name>
+        <url-pattern>/LoginControle</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
