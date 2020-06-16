@@ -25,7 +25,7 @@ public class ProdutoDao extends Conexao {
         
         List <ProdutoBean> lista = new ArrayList();
 
-        String sql = "select * from tbl_produto where id_categoria = ? order by descricao";
+        String sql = "select * from tbl_produtos where id_categoria = ? order by descricao";
 
         PreparedStatement ps;
 

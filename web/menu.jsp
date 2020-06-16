@@ -12,6 +12,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       
         <title>Web Pão</title>
     </head>
     <body>   
@@ -26,6 +27,6 @@
                      <%
             }   
         %>
-         <a href="#">Sair</a>
+        <a href="logout.jsp">Sair</a>
     </body>
 </html>

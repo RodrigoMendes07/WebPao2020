@@ -20,7 +20,8 @@
         <div class="container">
             <div class="row">
                 
-                <%                        int idCategoria = Integer.parseInt(request.getParameter("cod_cat"));
+                <%                        
+                    int idCategoria = Integer.parseInt(request.getParameter("cod_cat"));
                     ProdutoDao categorias = new ProdutoDao();
                     for (ProdutoBean pBean : categorias.listaProduto(idCategoria)) {
                 %>

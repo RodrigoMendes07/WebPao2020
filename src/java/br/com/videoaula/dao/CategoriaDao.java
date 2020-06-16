@@ -16,6 +16,7 @@ import java.util.List;
  *
  * @author Ti
  */
+
 public class CategoriaDao extends Conexao {
     
      public List <CategoriaBean> listaCategoria () {
@@ -24,7 +25,7 @@ public class CategoriaDao extends Conexao {
         
         List <CategoriaBean> lista = new ArrayList();
 
-        String sql = "select * from tbl_categoria order by descricao ";
+        String sql = "select * from tbl_categorias order by descricao ";
 
         PreparedStatement ps;
 

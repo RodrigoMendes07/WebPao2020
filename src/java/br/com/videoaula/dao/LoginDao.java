@@ -24,7 +24,7 @@ public class LoginDao extends Conexao {
         
         List <LoginBean> lista = new ArrayList();
 
-        String sql = "select * from tbl_usuario where email = ? and senha = ? ";
+        String sql = "select * from tbl_usuarios where email = ? and senha = ? ";
 
         PreparedStatement ps;
 
