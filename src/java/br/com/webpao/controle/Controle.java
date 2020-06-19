@@ -3,24 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.videoaula.controle;
+package br.com.webpao.controle;
 
-import br.com.videoaula.dao.LoginDao;
-import java.awt.Menu;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import org.jboss.weld.servlet.SessionHolder;
 
 /**
  *
  * @author Ti
  */
-public class LoginControle extends HttpServlet {
+public class Controle extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,30 +30,23 @@ public class LoginControle extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-
-            LoginDao lDao = new LoginDao();
-
-            String login = request.getParameter("txtLogin");
-            String senha = request.getParameter("txtSenha");
-
-            if (lDao.listaUsuario(login, senha).size() > 0) {
-                                       
-                    HttpSession session = request.getSession();
-                    
-                    session.setAttribute("usuario",login);
-                    response.sendRedirect("menu.jsp");
-                    
-                           System.out.println("Login"+login);
-                           System.out.println("Senha"+senha);
-                
-            }else{
-            
-               response.sendRedirect("index.jsp");
-            
-            }
+                           
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet Video Aula</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Titulo " + request.getParameter("txtTitulo") + "</h1>");
+            out.println("<h1>Autor " + request.getParameter("txtAutor") + "</h1>");
+            out.println("<h1>Data "+request.getParameter("txtData") + "</h1>");
+            out.println("<h1>Dimensão " + request.getParameter("txtDimensao")+ "</h1>");
+            out.println("<h1>Descrição " + request.getParameter("txtDescricao") + "</h1>");
+            out.println("<h1>Tipo da Obra " + request.getParameter("txtTipo") + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

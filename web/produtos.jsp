@@ -3,8 +3,9 @@
     Created on : 28/02/2020, 21:27:02
     Author     : Ti
 --%>
-<%@page import="br.com.videoaula.dao.ProdutoDao"%>
-<%@page import="br.com.videoaula.bean.ProdutoBean"%>
+
+<%@page import="br.com.webpao.bean.ProdutoBean"%>
+<%@page import="br.com.webpao.dao.ProdutoDao"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,33 +17,28 @@
     <body>
         <%@include file="menu.jsp" %> 
 
-        <h1>Nome do Produto.</h1>
+        <h1>Produtos</h1>
         <div class="container">
             <div class="row">
-                
-                <%                        
-                    int idCategoria = Integer.parseInt(request.getParameter("cod_cat"));
+
+                <%                    int idCategoria = Integer.parseInt(request.getParameter("cod_cat"));
                     ProdutoDao categorias = new ProdutoDao();
                     for (ProdutoBean pBean : categorias.listaProduto(idCategoria)) {
-                %>
-                <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row no-gutters">
-                        <div class="col-md-4">
-                            <img src="img/<%=pBean.getImagem()%>" class="card-img" alt="...">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title"><%=pBean.getDescricao()%></h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                            </div>
+                %>               
+                <!--Card produto-->
+                <div class="col-sm-3">
+                    <div class="card">
+                        <img src="img/<%=pBean.getImagem()%>" width="100" height="200" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title"><%=pBean.getNome()%></h5>
+                            <p class="card-text"><%=pBean.getDescricao()%></p>
+                            <h5>R$<%=pBean.getValor()%></h5>
+                            <a href="carrinho.jsp?cod_produto=<%=pBean.getIdProduto()%>" class="btn btn-primary">OFERTA DO DIA</a>
                         </div>
                     </div>
                 </div>
-
                 <% }
                 %>
-
             </div>
         </div>
     </body>

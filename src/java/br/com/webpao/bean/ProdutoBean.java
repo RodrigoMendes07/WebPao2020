@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.videoaula.bean;
+package br.com.webpao.bean;
 
 /**
  *
@@ -13,6 +13,7 @@ public class ProdutoBean {
 
     private int idProduto;
     private CategoriaBean catBean;
+    private String nome;    
     private String descricao;
     private double valor;
     private String imagem;
@@ -20,9 +21,10 @@ public class ProdutoBean {
     public ProdutoBean() {
     }
 
-    public ProdutoBean(int idProduto, CategoriaBean catBean, String descricao, double valor, String imagem) {
+    public ProdutoBean(int idProduto, CategoriaBean catBean, String nome, String descricao, double valor, String imagem) {
         this.idProduto = idProduto;
         this.catBean = catBean;
+        this.nome = nome;
         this.descricao = descricao;
         this.valor = valor;
         this.imagem = imagem;
@@ -42,6 +44,14 @@ public class ProdutoBean {
 
     public void setCatBean(CategoriaBean catBean) {
         this.catBean = catBean;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getDescricao() {
