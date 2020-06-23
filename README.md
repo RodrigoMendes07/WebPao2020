@@ -1,2 +1,2 @@
-# GaleriaDeArte2020
-Projeto Galeria de Arte em Java Web com Servlet
+# WebPão2020
+Projeto Web Pão em Java Web com Servlet e Jsp
